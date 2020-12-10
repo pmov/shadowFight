@@ -5,7 +5,8 @@ var lock1Img,lockOpenImg,keyImg;
 var blueBack,replay;
 var gold,silver,bronze;
 var goldImg,silverImg,bronzeImg;
-var A1,A2,A3,A1Img,A2Img,A3Img;
+var A1,A2,A3,A1Img,A2Img,A3Img,A4Img,A5Img,A6Img,A7Img;
+var gameName;
 
 var countDown1 = 30;
 var countDown2 = 30;
@@ -123,11 +124,18 @@ bronzeImg = loadImage("image/medals/medal3.jpg");
 A1Img = loadSound('image/audio/kick.mp3');
 A2Img = loadSound('image/audio/punch.wav');
 A3Img = loadSound('image/audio/smash.wav');
-
+A4Img = loadSound('image/audio/lose.wav');
+A5Img = loadSound('image/audio/goldC.wav');
+A7Img = loadSound('image/audio/silverC.wav');
+A6Img = loadSound('image/audio/bronzeC.wav');
 }
 
 function setup() {
   createCanvas(displayWidth,displayHeight);
+
+gameName = createButton("SPK Power");
+gameName.position(displayWidth/2-100,displayHeight/4);
+gameName.style("font-size","60px");
 
   quitB = createButton("Quit");
   quitB.position(5,15);
@@ -503,6 +511,7 @@ score -= 100;
 
 if(gameState === 0){
   playB.show();
+  gameName.show();
 
   punchB.hide();
   kickB.hide();
@@ -523,6 +532,13 @@ if(gameState === 0){
   start3B.hide();
   start4B.hide();
   start5B.hide();
+
+  A1Img.pause();
+  A2Img.pause();
+  A3Img.pause();
+  A4Img.pause();
+  A5Img.pause();
+  A6Img.pause();
 
   player.visible = false;
 
@@ -935,6 +951,7 @@ if(gameState === 6){
 if(gameState === 7){
   textSize(50);
   text("you lost",displayWidth/2,displayHeight/2);
+  
   smashB.hide();
   punchB.hide();
   kickB.hide();
@@ -952,6 +969,8 @@ if(gameState === 7){
   healthSpriteP.visible = false;
   nextB.hide();
   replay.show();
+  A4Img.play();
+  
 }
 
 if(gameState === 8){
@@ -991,6 +1010,7 @@ if(gameState === 10){
    gold.visible = true;
    textSize(32);
    text("You Win GOLD Medal",displayWidth/2-150,quitB.y+100);
+   A5Img.play();
    smashB.hide();
   punchB.hide();
   kickB.hide();
@@ -1015,6 +1035,7 @@ if(gameState === 11){
   silver.visible = true;
   textSize(32);
   text("You Win SILVER Medal",displayWidth/2-150,quitB.y+100);
+  A6Img.play();
   smashB.hide();
   punchB.hide();
   kickB.hide();
@@ -1039,6 +1060,7 @@ if(gameState === 12){
   bronze.visible = true;
   textSize(32);
   text("You Win BRONZE Medal",displayWidth/2-150,quitB.y+100);
+  A7Img.play();
   smashB.hide();
   punchB.hide();
   kickB.hide();
@@ -1276,6 +1298,7 @@ nextB.mousePressed(()=>{
 //image(variable Name, xposition,yposition,width,height);
 function playBClick(){
   gameState = 1;
+  gameName.hide();
   playB.hide();
   if(lockState === 0){
     lock1.visible = true;
@@ -1628,6 +1651,12 @@ function quitBClick(){
 
 function nextBClick(){
   quitBClick();
+  A1Img.pause();
+  A2Img.pause();
+  A3Img.pause();
+  A4Img.pause();
+  A5Img.pause();
+  A6Img.pause();
 }
 
 function kickSmashPunchkey(){
