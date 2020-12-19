@@ -131,10 +131,11 @@ A6Img = loadSound('image/audio/bronzeC.wav');
 }
 
 function setup() {
-  createCanvas(displayWidth,displayHeight);
+  createCanvas(displayWidth,displayHeight/1.196);
 
 gameName = createButton("SPK Power");
-gameName.position(displayWidth/2-100,displayHeight/4);
+//gameName.addImage(silverImg);
+gameName.position(displayWidth/2-100,displayHeight/1.196/4);
 gameName.style("font-size","60px");
 
   quitB = createButton("Quit");
@@ -142,99 +143,100 @@ gameName.style("font-size","60px");
   quitB.style("font-size","20px"); 
 
   playB = createButton("Play");
-  playB.position(displayWidth/2,displayHeight/2);
+  playB.position(displayWidth/2,displayHeight/1.196/2);
   playB.style("font-size","50px");
   playB.style("color","green");
+  //playB.addImage(playerStart);
 
   punchB = createButton("Punch");
-  punchB.position(displayWidth/2,displayHeight/2-50);
+  punchB.position(displayWidth/2,displayHeight/1.196/2-50);
   punchB.style("font-size","30px");
   punchB.style("color","green");
 
-  kickB = createButton("kick");
-  kickB.position(displayWidth/2,displayHeight/2-100);
+  kickB = createButton("Kick");
+  kickB.position(displayWidth/2,displayHeight/1.196/2-100);
   kickB.style("font-size","30px");
   kickB.style("color","green");
   
   smashB = createButton("Smash");
-  smashB.position(displayWidth/2,displayHeight/2-150);
+  smashB.position(displayWidth/2,displayHeight/1.196/2-150);
   smashB.style("font-size","30px");
   smashB.style("color","green");
 
   fightE1B = createButton("Fight with KEN");
-  fightE1B.position(displayWidth/2-500,displayHeight/2);
+  fightE1B.position(displayWidth/2-500,displayHeight/1.196/2);
 
   fightE2B = createButton("Fight with DHELSIM");
-  fightE2B.position(displayWidth/2-300,displayHeight/2);
+  fightE2B.position(displayWidth/2-300,displayHeight/1.196/2);
 
   fightE3B = createButton("Fight with RYU");
-  fightE3B.position(displayWidth/2-100,displayHeight/2);
+  fightE3B.position(displayWidth/2-100,displayHeight/1.196/2);
 
   fightE4B = createButton("Fight with FEILONG");
-  fightE4B.position(displayWidth/2+100,displayHeight/2);
+  fightE4B.position(displayWidth/2+100,displayHeight/1.196/2);
 
   fightE5B = createButton("Fight with THAWK");
-  fightE5B.position(displayWidth/2+300,displayHeight/2);
+  fightE5B.position(displayWidth/2+300,displayHeight/1.196/2);
   
-start1B = createButton("Start");
-start1B.position(displayWidth-100,displayHeight-50);
+start1B = createButton("Fight");
+start1B.position(displayWidth-100,displayHeight/1.196-50);
 start1B.style("font-size","30px");
 start1B.style("color","red");
 
-start2B = createButton("Start");
-start2B.position(displayWidth-100,displayHeight-50);
+start2B = createButton("Fight");
+start2B.position(displayWidth-100,displayHeight/1.196-50);
 start2B.style("font-size","30px");
 start2B.style("color","red");
 
-start3B = createButton("Start");
-start3B.position(displayWidth-100,displayHeight-50);
+start3B = createButton("Fight");
+start3B.position(displayWidth-100,displayHeight/1.196-50);
 start3B.style("font-size","30px");
 start3B.style("color","red");
 
-start4B = createButton("Start");
-start4B.position(displayWidth-100,displayHeight-50);
+start4B = createButton("Fight");
+start4B.position(displayWidth-100,displayHeight/1.196-50);
 start4B.style("font-size","30px");
 start4B.style("color","red");
 
-start5B = createButton("Start");
-start5B.position(displayWidth-100,displayHeight-50);
+start5B = createButton("Fight");
+start5B.position(displayWidth-100,displayHeight/1.196-50);
 start5B.style("font-size","30px");
 start5B.style("color","red");
 
 nextB = createButton("Next");
-nextB.position(displayWidth-100,displayHeight-50);
+nextB.position(displayWidth-100,displayHeight/1.196-50);
 nextB.style("font-size","30px");
 nextB.style("color","red");
 
-  player =  createSprite(500,500,20,20);
+  player =  createSprite(500,displayHeight/1.196/2,20,20);
   
-blueBack = createSprite(321,355,130,200);
+blueBack = createSprite(321,displayHeight/1.196/2-80,130,200);
 blueBack.shapeColor = "blue";
 
-  enymy1O = createSprite(321,351,200,200);
+  enymy1O = createSprite(321,displayHeight/1.196/2-513,200,200);
   enymy1O.addImage(enymy1OImg);
-  enymy2O = createSprite(535,353,200,200);
+  enymy2O = createSprite(535,displayHeight/1.196/2-511,200,200);
   enymy2O.addImage(enymy2OImg);
-  enymy3O = createSprite(721,355,200,200);
+  enymy3O = createSprite(721,displayHeight/1.196/2-509,200,200);
   enymy3O.addImage(enymy3OImg);
-  enymy4O = createSprite(935,353,200,200);
+  enymy4O = createSprite(935,displayHeight/1.196/2-511,200,200);
   enymy4O.addImage(enymy4OImg);
-   enymy5O = createSprite(1130,357,200,200);
+   enymy5O = createSprite(1130,displayHeight/1.196/2-357,200,200);
    enymy5O.addImage(enymy5OImg);
 
-lock1 = createSprite(enymy2O.x,enymy2O.y+10);
+lock1 = createSprite(enymy2O.x,displayHeight/1.196/2-64);
 lock1.addImage(lock1Img);
 lock1.scale = 0.7
 
-lock2 = createSprite(enymy3O.x,enymy3O.y+10);
+lock2 = createSprite(enymy3O.x,displayHeight/1.196/2-64);
 lock2.addImage(lock1Img);
 lock2.scale = 0.7
 
-lock3 = createSprite(enymy4O.x,enymy4O.y+10);
+lock3 = createSprite(enymy4O.x,displayHeight/1.196/2-64);
 lock3.addImage(lock1Img);
 lock3.scale = 0.7
 
-lock4 = createSprite(enymy5O.x,enymy5O.y+10);
+lock4 = createSprite(enymy5O.x,displayHeight/1.196/2-64);
 lock4.addImage(lock1Img);
 lock4.scale = 0.7
 
@@ -244,78 +246,78 @@ lockOpen.addImage(lockOpenImg);
 key = createSprite(400,200,20,20);
 key.addImage(keyImg);
 
-enymy1 = createSprite(displayWidth-500,800,20,20);
-enymy2 = createSprite(displayWidth-500,495,20,20);
-enymy3 = createSprite(displayWidth-600,495,20,20);
-enymy4 = createSprite(displayWidth-500,495,20,20);
-enymy5 = createSprite(displayWidth-400,495,20,20);
+enymy1 = createSprite(displayWidth-500,displayHeight/1.196/2-64,20,20);
+enymy2 = createSprite(displayWidth-500,displayHeight/1.196/2-369,20,20);
+enymy3 = createSprite(displayWidth-600,displayHeight/1.196/2-369,20,20);
+enymy4 = createSprite(displayWidth-500,displayHeight/1.196/2-369,20,20);
+enymy5 = createSprite(displayWidth-400,displayHeight/1.196/2-369,20,20);
 //enymy3.addImage(enymy3Start);
 //enymy4.addImage(enymy4Start);
 //enymy5.addImage(enymy5Start);
 //enymy2.addImage(enymy2Start);
 //enymy1.addImage(enymy1Start);
 
-healthSpriteP = createSprite(150,100,20,20);
+healthSpriteP = createSprite(150,displayHeight/1.196-764,20,20);
 healthSpriteP.addImage(healthImg);
 healthSpriteP.scale = 0.5;
 
-healthSpriteE1 = createSprite(displayWidth-150,100,20,20);
+healthSpriteE1 = createSprite(displayWidth-150,displayHeight/1.196-764,20,20);
 healthSpriteE1.addImage(healthImg);
 healthSpriteE1.scale = 0.5;
 
-healthSpriteE2 = createSprite(displayWidth-150,100,20,20);
+healthSpriteE2 = createSprite(displayWidth-150,displayHeight/1.196-764,20,20);
 healthSpriteE2.addImage(healthImg);
 healthSpriteE2.scale = 0.5;
 
-healthSpriteE3 = createSprite(displayWidth-150,100,20,20);
+healthSpriteE3 = createSprite(displayWidth-150,displayHeight/1.196-764,20,20);
 healthSpriteE3.addImage(healthImg);
 healthSpriteE3.scale = 0.5;
 
-healthSpriteE4 = createSprite(displayWidth-150,100,20,20);
+healthSpriteE4 = createSprite(displayWidth-150,displayHeight/1.196-764,20,20);
 healthSpriteE4.addImage(healthImg);
 healthSpriteE4.scale = 0.5;
 
-healthSpriteE5 = createSprite(displayWidth-150,100,20,20);
+healthSpriteE5 = createSprite(displayWidth-150,displayHeight/1.196-764,20,20);
 healthSpriteE5.addImage(healthImg);
 healthSpriteE5.scale = 0.5;
 
-hpE1 = map(healthE1,0,100,0,width);
-hpE2 = map(healthE2,0,100,0,width);
-hpE3 = map(healthE3,0,100,0,width);
-hpE4 = map(healthE4,0,100,0,width);
-hpE5 = map(healthE5,0,100,0,width);
-hpP = map(healthP,0,100,0,width);
+hpE1 = map(healthE1,0,displayHeight/1.196-764,0,width);
+hpE2 = map(healthE2,0,displayHeight/1.196-764,0,width);
+hpE3 = map(healthE3,0,displayHeight/1.196-764,0,width);
+hpE4 = map(healthE4,0,displayHeight/1.196-764,0,width);
+hpE5 = map(healthE5,0,displayHeight/1.196-764,0,width);
+hpP = map(healthP,0,displayHeight/1.196-764,0,width);
 
  replay = createButton("replay");
- replay.position(displayWidth-100,displayHeight-50);
+ replay.position(displayWidth-100,displayHeight/1.196-50);
  replay.style("font-size","30px");
 replay.style("color","red");
 
-hp1 = createSprite(165,90,hpP,30);
+hp1 = createSprite(165,displayHeight/1.196/2-774,hpP,30);
 hp1.shapeColor = "red";
 
-hp2 = createSprite(displayWidth-137,90,hpE1,30);
+hp2 = createSprite(displayWidth-137,displayHeight/1.196/2-774,hpE1,30);
 hp2.shapeColor = "red";
 
-hp3 = createSprite(displayWidth-137,90,hpE1,30);
+hp3 = createSprite(displayWidth-137,displayHeight/1.196/2-774,hpE1,30);
 hp3.shapeColor = "red";
 
-hp4 = createSprite(displayWidth-137,90,hpE1,30);
+hp4 = createSprite(displayWidth-137,displayHeight/1.196/2-774,hpE1,30);
 hp4.shapeColor = "red";
 
-hp5 = createSprite(displayWidth-137,90,hpE1,30);
+hp5 = createSprite(displayWidth-137,displayHeight/1.196/2-774,hpE1,30);
 hp5.shapeColor = "red";
 
-hp6 = createSprite(displayWidth-137,90,hpE1,30);
+hp6 = createSprite(displayWidth-137,displayHeight/1.196/2-774,hpE1,30);
 hp6.shapeColor = "red";
 
-gold = createSprite(displayWidth/2,displayHeight/2);
+gold = createSprite(displayWidth/2,displayHeight/1.196/2);
 gold.addImage(goldImg);
 
-silver = createSprite(displayWidth/2,displayHeight/2);
+silver = createSprite(displayWidth/2,displayHeight/1.196/2);
 silver.addImage(silverImg);
 
-bronze = createSprite(displayWidth/2,displayHeight/2);
+bronze = createSprite(displayWidth/2,displayHeight/1.196/2);
 bronze.addImage(bronzeImg);
 
 }
@@ -600,7 +602,7 @@ playBClick();
 //enymy1.x = displayWidth-500;
   //enymy1.visible = false;
 
- image(backimageImg1,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight);
+ image(backimageImg1,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196);
 }
 
 if(enymy1State === 2){
@@ -720,7 +722,7 @@ if(playerState === 6){
 
 
 if(gameState === 1){
-  image(backimageImg2,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight-20);
+  image(backimageImg2,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196-20);
   enymy1O.visible = true;
   enymy2O.visible = true;
   enymy3O.visible = true;
@@ -799,13 +801,13 @@ if(gameState === "enymy5Show"){
 if(gameState === 2){
   player.visible = true;
   enymy1.visible = true;
-  player.y = 700;
-  enymy1.y = 700;
+  player.y = displayHeight/1.196-164;
+  enymy1.y = displayHeight/1.196-164;
   punchB.show();
   kickB.show();
   smashB.show();
   Move();
-  image(backimageImg3,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight-20);
+  image(backimageImg3,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196-20);
 enymy1O.visible = false;
 enymy2O.visible = false;  
 enymy3O.visible = false;
@@ -831,14 +833,14 @@ enymy1.x -= 10;
 if(gameState === 3){
    player.visible = true;
   enymy2.visible = true;
-  enymy2.y = 480;
-  player.y = 480;
+  enymy2.y = displayHeight/1.196-384;
+  player.y = displayHeight/1.196-384;
   punchB.show();
   kickB.show();
   smashB.show();
   kickSmashPunchkey();
   Move();
-  image(backimageImg4,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight-20);
+  image(backimageImg4,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196-20);
   enymy1O.visible = false;
 enymy2O.visible = false;  
 enymy3O.visible = false;
@@ -861,14 +863,14 @@ hp1.visible = true;
 if(gameState === 4){
   player.visible = true;
   enymy3.visible = true;
-  player.y = 700;
-  enymy3.y = 700;
+  player.y = displayHeight/1.196-164;
+  enymy3.y = displayHeight/1.196-164;
   punchB.show();
   kickB.show();
   smashB.show();
   kickSmashPunchkey();
   Move();
-  image(backimageImg5,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight-20);
+  image(backimageImg5,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196-20);
   enymy1O.visible = false;
   enymy2O.visible = false;  
   enymy3O.visible = false;
@@ -891,14 +893,14 @@ if(gameState === 4){
 if(gameState === 5){
   player.visible = true;
   enymy4.visible = true;
-  enymy4.y = 700;
-  player.y = 700;
+  enymy4.y = displayHeight/1.196-164;
+  player.y = displayHeight/1.196-164;
   punchB.show();
   kickB.show();
   smashB.show();
   kickSmashPunchkey();
   Move();
-  image(backimageImg6,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight-20);
+  image(backimageImg6,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196-20);
   enymy1O.visible = false;
   enymy2O.visible = false;  
   enymy3O.visible = false;
@@ -921,14 +923,14 @@ if(gameState === 5){
 if(gameState === 6){
   player.visible = true;
   enymy5.visible = true;
-  enymy5.y = 700;
-  player.y = 700;
+  enymy5.y = displayHeight/1.196-164;
+  player.y = displayHeight/1.196-164;
   punchB.show();
   kickB.show();
   smashB.show();
   kickSmashPunchkey();
   Move();
-  image(backimageImg7,displayWidth/6-280,displayHeight/6-130,displayWidth,displayHeight-20);
+  image(backimageImg7,displayWidth/6-280,displayHeight/1.196/6-130,displayWidth,displayHeight/1.196-20);
   enymy1O.visible = false;
   enymy2O.visible = false;  
   enymy3O.visible = false;
@@ -950,7 +952,7 @@ if(gameState === 6){
 
 if(gameState === 7){
   textSize(50);
-  text("you lost",displayWidth/2,displayHeight/2);
+  text("you lost",displayWidth/2,displayHeight/1.196/2);
   
   smashB.hide();
   punchB.hide();
@@ -975,7 +977,7 @@ if(gameState === 7){
 
 if(gameState === 8){
   textSize(50);
-  text("you win",displayWidth/2,displayHeight/2);
+  text("you win",displayWidth/2,displayHeight/1.196/2);
   smashB.hide();
   punchB.hide();
   kickB.hide();
@@ -996,9 +998,9 @@ if(gameState === 8){
 
 if(gameState === 9){
   textSize(32);
-  text("you win all match",200,200);
+  text("you win all match",displayWidth/2,displayHeight/1.196/2);
   end -= 1;
-  if(end <= -100){
+  if(end <= -50){
 lockState = 4;
 gameState = 0;
 fightE1B.hide();
@@ -1349,15 +1351,17 @@ pauseState = 0;
 //fightE4B.show();
 //fightE5B.show();
 enymy1O.x = 321;
-enymy1O.y = 351;
+enymy1O.y = displayHeight/1.196-(864-351);
 enymy2O.x = 535;
-enymy2O.y = 353;
+enymy2O.y = displayHeight/1.196-(864-353);
 enymy3O.x = 721;
-enymy3O.y = 355;
+enymy3O.y = displayHeight/1.196-(864-355);
 enymy4O.x = 935;
-enymy4O.y = 353;
+enymy4O.y = displayHeight/1.196-(864-353);
 enymy5O.x = 1130;
-enymy5O.y = 357;
+enymy5O.y = displayHeight/1.196-(864-357);
+
+
 }
 
 function fightE1BClick(){
@@ -1393,7 +1397,7 @@ blueBack.x = enymy3O.x;
 blueBack.visible = true;
 }
 
-function fightE4BClick(){
+ function fightE4BClick(){
 start4B.show();
 start2B.hide();
 start3B.hide();
@@ -1431,6 +1435,7 @@ function Start1BClick(){
   enymy1O.visible = true;
   enymy1O.x = displayWidth/2+player.x;
   enymy1O.y = player.y;
+  player.y = displayHeight/1.196/2;
   enymy2O.visible = false;
   enymy3O.visible = false;
   enymy4O.visible = false;
@@ -1458,6 +1463,7 @@ function Start2BClick(){
   enymy2O.visible = true;
   enymy2O.x = displayWidth/2+player.x;
   enymy2O.y = player.y;
+  player.y = displayHeight/1.196/2;
   enymy1O.visible = false;
   enymy3O.visible = false;
   enymy4O.visible = false;
@@ -1485,6 +1491,7 @@ function Start3BClick(){
   enymy3O.visible = true;
   enymy3O.x = displayWidth/2+player.x;
   enymy3O.y = player.y;
+  player.y = displayHeight/1.196/2;
   enymy2O.visible = false;
   enymy1O.visible = false;
   enymy4O.visible = false;
@@ -1512,6 +1519,7 @@ function Start4BClick(){
   enymy4O.visible = true;
   enymy4O.x = displayWidth/2+player.x;
   enymy4O.y = player.y;
+  player.y = displayHeight/1.196/2;
   enymy2O.visible = false;
   enymy3O.visible = false;
   enymy1O.visible = false;
@@ -1539,6 +1547,7 @@ function Start5BClick(){
   enymy5O.visible = true;
   enymy5O.x = displayWidth/2+player.x;
   enymy5O.y = player.y;
+  player.y = displayHeight/1.196/2;
   enymy2O.visible = false;
   enymy3O.visible = false;
   enymy4O.visible = false;
@@ -1626,7 +1635,7 @@ function quitBClick(){
   countDown5 = 30;
   pauseState = 30;
   player.x = 500;
-  player.y = 500;
+  player.y = displayHeight/1.196/2-364;
   //enymy1.x = displayWidth-player.x;
   healthE1 = 100;
   healthP = 100;
